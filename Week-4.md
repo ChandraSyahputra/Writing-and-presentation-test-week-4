@@ -197,6 +197,92 @@ body {
   background-color: red;
 }
 ```
--
+- Menggabungkan file CSS untuk styling berbagai device.
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Web Design</title>
+    <!-- main.css untuk all device -->
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <h2>Responsive Web Design (RWD)</h2>
+  </body>
+</html>
+```
+```CSS
+body {
+  background-color: white;
+}
+/* Gunakan sintaks ini untuk set media query pada file css */
+@media screen and (max-width: 500px) {
+  body {
+    background-color: aquamarine;
+  }
+}
+```
+
+**Breakpoint**
+- Perubahan yang terjadi pada tampilan saat berganti device atau ukuran width disebut breakpoint.
+
+**Complex Breakpoint Media Query**
+- Jika kita mengininkan tampilan yang ingin diterapkan pada range ukuran device tertentu, kita bisa membuatnya menjadi range media query.
+
+```CSS
+body {
+  background-color: white;
+}
+/* Styling ini akan dijalankan jika width pada device Lebih atau sama dengan 500px dan maksimum 700px */
+/* Styling ini tidak akan dijalankan jika width lebih dari 700px */
+@media screen and (min-width: 500px) and (max-width: 700px) {
+  body {
+    background-color: aquamarine;
+  }
+}
+```
+
 
 ## Bootstrap 5
+- Bootstrap merupakan framework HTML, CSS, dan JavaScript yang berfungsi untuk mendesain website responsive agar lebih mudah.
+
+**Cara Menggunakan Bootstrap**
+- Kali ini saya akan menunjukkan cara menggunakan bootstrap menggunakan CDN.
+
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+```
+
+**Terdapat 6 Breakpoint pada Bootstrap**
+| Heading 1         | Heading 2 | Heading 3 |
+| :---------------- | :-------: | --------: |
+| Extra small       |   None    |    <576px |
+| Small             |    sm     |    ≥576px |
+| Medium            |    md     |    ≥768px |
+| Large             |    lg     |    ≥992px |
+| Extra large       |    xl     |   ≥1200px |
+| Extra extra large |    xxl    |   ≥1400px |
